@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ plot.page_title }}</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body,
+      div.pyl7plot-plot-container {
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+
+    <div id="{{ plot.plot_id }}" class="pyl7plot-plot-container"></div>
+
+    <script>
+      // load javascript
+      new Promise(function(resolve, reject) {
+        var script = document.createElement("script");
+        script.onload = resolve;
+        script.onerror = reject;
+        script.src = "https://unpkg.com/@antv/l7plot@0";
+        document.head.appendChild(script);
+      }).then(() => {
+        var plot_{{ plot.plot_id }} = new L7Plot.{{plot.plot_type}}("{{ plot.plot_id }}", {{ plot.js_options }});
+      });
+    </script>
+  </body>
+</html>
