@@ -20,7 +20,7 @@ $ pip install pyl7plot
 
 ## Usage
 
-#### **render HTML**
+#### **Render to HTML**
 
 ```py
 from pyl7plot import Plot
@@ -59,16 +59,16 @@ dot.set_options({
   },
 })
 
-# render html file
+# Render html file
 dot.render("dot.html")
 
-# or render html string
+# Or render html string
 # dot.render_html()
 ```
 
 ![image](https://gw.alipayobjects.com/zos/antfincdn/Yn%24QslMAWP/20220326145659.jpg)
 
-#### **render Jupyter**
+#### **Render in Jupyter**
 
 ```py
 from pyl7plot import Plot, JS
@@ -110,10 +110,10 @@ dot.set_options({
   },
 })
 
-# render in notebook
+# Render in notebook
 line.render_notebook()
 
-# or render in jupyter lab
+# Or render in jupyter lab
 # line.render_jupyter_lab()
 ```
 
