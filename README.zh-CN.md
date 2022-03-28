@@ -44,7 +44,9 @@ dot.set_options({
     "value": ["#82cf9c", "#10b3b0", "#2033ab"],
     "scale": { "type": "quantize" },
   },
-  "size": "mag",
+  "size": {
+    "field": "mag",
+  },
   "state": { "active": True },
   "scale": { "position": "bottomright" },
   "legend": { "position": "bottomleft" },
@@ -53,59 +55,16 @@ dot.set_options({
   },
 })
 
-# 1. 渲染成 html 文件
-dot.render("plot.html")
-# 2. 渲染成 html 字符串
-dot.render_html()
+# 渲染成 html 文件
+dot.render("dot.html")
+
+# 或者渲染成 html 字符串
+# dot.render_html()
 ```
 
 ![image](https://gw.alipayobjects.com/zos/antfincdn/Yn%24QslMAWP/20220326145659.jpg)
 
 #### **在 Jupyter 中使用**
-
-```py
-from pyl7plot import Plot
-
-dot = Plot("Dot")
-
-dot.set_options({
-  "map": {
-    "type": "mapbox",
-    "style": "light",
-    "center": [103.447303, 31.753574],
-    "zoom": 7,
-  },
-  "autoFit": True,
-  "source": {
-    "data": [
-       { "lng": 103.715, "lat": 31.211, "depth": 10, "mag": 5.8, "title": "M 5.8 - eastern Sichuan, China" },
-       { "lng": 104.682, "lat": 31.342, "depth": 10, "mag": 5.7, "title": "M 5.7 - eastern Sichuan, China" },
-       # ...
-    ],
-    "parser": { "type": "json", "x": "lng", "y": "lat" },
-  },
-  "color": {
-    "field": "mag",
-    "value": ["#82cf9c", "#10b3b0", "#2033ab"],
-    "scale": { "type": "quantize" },
-  },
-  "size": "mag",
-  "state": { "active": True },
-  "scale": { "position": "bottomright" },
-  "legend": { "position": "bottomleft" },
-  "tooltip": {
-    "items": ["title", "mag", "depth"],
-  },
-})
-
-# 1. 渲染到 notebook
-dot.render_notebook()
-
-# 2. 渲染到 jupyter lab
-dot.render_jupyter_lab()
-```
-
-#### **使用 JavaScript 回调**
 
 ```py
 from pyl7plot import Plot, JS
@@ -146,9 +105,13 @@ dot.set_options({
     "items": ["title", "mag", "depth"],
   },
 })
-```
 
-使用 `JS` 方法，你可以创建一个 JavaScript 的代码片段去处理各种回调方法属性。
+# 渲染到 notebook
+dot.render_notebook()
+
+# 或者渲染到 jupyter lab
+# dot.render_jupyter_lab()
+```
 
 ## API
 
@@ -156,7 +119,7 @@ dot.set_options({
 
 1. _Plot(plot_type: str)_: 获取 `Plot` 对应的类实例。
 
-2. _plot.set_options(options: object)_: 给图表实例设置一个 [L7Plot](https://l7plot.antv.vision/) 图形的配置，文档可以直接参考 G2Plot 官网，未进行任何二次数据结构包装。
+2. _plot.set_options(options: object)_: 给图表实例设置一个 [L7Plot](https://l7plot.antv.vision/) 图形的配置，文档可以直接参考 L7Plot 官网，未进行任何二次数据结构包装。
 
 3. _plot.render(path, env, \*\*kwargs)_: 渲染出一个 HTML 文件，同时可以传入文件的路径，以及 jinja2 env 和 kwargs 参数。
 

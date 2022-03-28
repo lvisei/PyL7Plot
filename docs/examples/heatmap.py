@@ -1,4 +1,4 @@
-from pyl7plot import Plot, JS
+from pyl7plot import Plot
 
 data = [
     {
@@ -371,9 +371,9 @@ data = [
     }
 ]
 
-dotMap = Plot("Dot")
+heatMap = Plot("Heatmap")
 
-dotMap.set_options({
+heatMap.set_options({
     "map": {
         "type": "mapbox",
         "style": "light",
@@ -385,23 +385,23 @@ dotMap.set_options({
         "data": data,
         "parser": {"type": "json", "x": "lng", "y": "lat"},
     },
-    "color": {
-        "field": "mag",
-        "value": ["#82cf9c", "#10b3b0", "#2033ab"],
-        "scale": {"type": "quantize"},
-    },
     "size": {
         "field": "mag",
-        "value": JS('''function({ mag }) {
-            return (mag - 4.3) * 10;
-        }''')
     },
-    "state": {"active": True},
-    "scale": {"position": "bottomright"},
+    "style": {
+        "intensity": 3,
+        "radius": 20,
+        "opacity": 1,
+        "colorsRamp": [
+            {"color": '#206C7C', "position": 0},
+            {"color": '#2EA9A1 ', "position": 0.2},
+            {"color": '#91EABC', "position": 0.4},
+            {"color": '#FFF598', "position": 0.6},
+            {"color": '#F7B74A', "position": 0.8},
+            {"color": '#FF4818', "position": 1},
+        ],
+    },
     "legend": {"position": "bottomleft"},
-    "tooltip": {
-        "items": ["title", "mag", "depth"],
-    },
 })
 
-dotMap.render("dot-map.html")
+heatMap.render("heat-map.html")
