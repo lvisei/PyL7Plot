@@ -98,6 +98,7 @@ dot.set_options({
   },
   "size": {
     "field": "mag",
+    # Use JS API, you can use JavaScript syntax for callback.
     "value": JS('''function({ mag }) {
         return (mag - 4.3) * 10;
       }''')
@@ -111,10 +112,10 @@ dot.set_options({
 })
 
 # Render in notebook
-line.render_notebook()
+dot.render_notebook()
 
 # Or render in jupyter lab
-# line.render_jupyter_lab()
+# dot.render_jupyter_lab()
 ```
 
 ## API
