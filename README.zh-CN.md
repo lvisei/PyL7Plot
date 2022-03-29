@@ -5,7 +5,7 @@
 🌍 PyL7Plot 是 [`@AntV/L7Plot`](https://github.com/antvis/L7Plot) 在 Python3 上的封装。L7Plot 是基于 L7 的地理空间可视化图表库。
 
 [![Latest Stable Version](https://img.shields.io/pypi/v/pyl7plot.svg)](https://pypi.python.org/pypi/pyl7plot)
-[![build Status](https://github.com/hustcc/pyl7plot/workflows/build/badge.svg?branch=main)](https://github.com/hustcc/pyl7plot/actions?query=workflow%3Abuild)
+[![build Status](https://github.com/lvisei/pyl7plot/workflows/build/badge.svg?branch=main)](https://github.com/lvisei/pyl7plot/actions?query=workflow%3Abuild)
 [![Pypi Download](https://img.shields.io/pypi/dm/pyl7plot)](https://pypi.python.org/pypi/pyl7plot)
 
 <div align="center">
