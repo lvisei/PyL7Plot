@@ -31,7 +31,7 @@ class Plot():
         return self
 
     '''
-    get the JavaScript options of G2Plot
+    get the JavaScript options of L7Plot
     '''
 
     def dump_js_options(

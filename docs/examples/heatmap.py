@@ -402,6 +402,7 @@ heatMap.set_options({
         ],
     },
     "legend": {"position": "bottomleft"},
+    "scale": {"position": "bottomright"},
 })
 
 heatMap.render("heat-map.html")

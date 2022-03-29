@@ -25,7 +25,8 @@ __license__ = "MIT"
 __requires__ = ["jinja2~=2.11.3", "simplejson"]
 __extra_requires__ = {}
 
-__keywords__ = ["AntV", "L7Plot", "charts", "PyL7Plot", "visualization"]
+__keywords__ = ["AntV", "L7Plot", "charts", "PyL7Plot",
+                "visualization", "map", "geospatial-visualization"]
 
 # Load the package's _version.py module as a dictionary.
 here = os.path.abspath(os.path.dirname(__file__))

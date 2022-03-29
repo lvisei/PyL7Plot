@@ -10,12 +10,25 @@ choroplethMap.set_options({
         "zoom": 7,
     },
     "autoFit": True,
+    "viewLevel": {
+        "level": "world",
+        "adcode": "all",
+    },
     "source": {
-        "data": [],
-        "joinBy": {"sourceField": "code", "geoField": "adcode"},
+        "data": [
+            {"name": "中华人民共和国", "value": 200},
+            {"name": "美国", "value": 250},
+            {"name": "俄罗斯", "value": 180},
+            {"name": "日本", "value": 120},
+            {"name": "加拿大", "value": 130},
+            {"name": "澳大利亚", "value": 130},
+            {"name": "新加坡", "value": 170},
+            {"name": "巴西", "value": 80},
+        ],
+        "joinBy": {"sourceField": "name", "geoField": "name"},
     },
     "color": {
-        "field": "mag",
+        "field": "value",
         "value": ["#B8E1FF", "#7DAAFF", "#3D76DD", "#0047A5", "#001D70"],
     },
     "style": {
@@ -41,7 +54,7 @@ choroplethMap.set_options({
     "state": {"active": True, "select":  True},
     "legend": {"position": "bottomleft"},
     "tooltip": {
-        "items": ["name", "adcode"],
+        "items": ["name", "adcode", "value"],
     },
 })
 

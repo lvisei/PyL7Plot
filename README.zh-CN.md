@@ -8,6 +8,10 @@
 [![build Status](https://github.com/hustcc/pyl7plot/workflows/build/badge.svg?branch=main)](https://github.com/hustcc/pyl7plot/actions?query=workflow%3Abuild)
 [![Pypi Download](https://img.shields.io/pypi/dm/pyl7plot)](https://pypi.python.org/pypi/pyl7plot)
 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/26923747/160286530-aec01c97-a56b-4ea9-9fc6-f245d8f7b871.png" width="800">
+</div>
+
 ## 安装
 
 ```bash
@@ -79,6 +83,7 @@ dot.set_options({
     "zoom": 7,
   },
   "autoFit": True,
+  "height": 400, # 设置在 jupyter 预览的高度
   "source": {
     "data": [
        { "lng": 103.715, "lat": 31.211, "depth": 10, "mag": 5.8, "title": "M 5.8 - eastern Sichuan, China" },
@@ -94,6 +99,7 @@ dot.set_options({
   },
   "size": {
     "field": "mag",
+    # 使用 JS 方法，可以创建一个 JavaScript 的代码片段去处理各种回调方法属性
     "value": JS('''function({ mag }) {
         return (mag - 4.3) * 10;
       }''')
@@ -113,6 +119,8 @@ dot.render_notebook()
 # dot.render_jupyter_lab()
 ```
 
+> 更多 PyL7plot 在线 [Jupyter Lab](https://colab.research.google.com/drive/11gTHsZ5Xg31jjJUJWEt5PkZv0VE9qyAG?usp=sharing) 示例。
+
 ## API
 
 - **Plot**
@@ -123,13 +131,11 @@ dot.render_notebook()
 
 3. _plot.render(path, env, \*\*kwargs)_: 渲染出一个 HTML 文件，同时可以传入文件的路径，以及 jinja2 env 和 kwargs 参数。
 
-4. _plot.render_notebook(env, \*\*kwargs)_: 将图形渲染到 jupyter 的预览。
+4. _plot.render_notebook(env, \*\*kwargs)_: 将图表渲染到 jupyter 的预览。
 
-5. _plot.render_jupyter_lab(env, \*\*kwargs)_: 将图形渲染到 jupyter lab 的预览。
+5. _plot.render_jupyter_lab(env, \*\*kwargs)_: 将图表渲染到 jupyter lab 的预览。
 
 6. _plot.render_html(env, \*\*kwargs)_: 渲染出 HTML 字符串，同时可以传入 jinja2 env 和 kwargs 参数。
-
-7. _plot.dump_js_options(env, \*\*kwargs)_: 输出 Javascript 的 option 配置结构，同时可以传入 jinja2 env 和 kwargs 参数，可以用于 Server 中的 HTTP 结构返回数据结构。
 
 ## 协议
 

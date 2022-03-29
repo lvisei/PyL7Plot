@@ -2,7 +2,7 @@
 
 # PyL7Plot
 
-🌍 Python3 binding for [`@AntV/L7Plot`](https://github.com/antvis/L7Plot) Plotting Library. Geospatial Visualization Chart Library Based on L7. `PyL7Plot` is inspired by `PyG2Plot`.
+🌍 Python3 binding for [`@AntV/L7Plot`](https://github.com/antvis/L7Plot) Plotting Library. Geospatial Visualization Chart Library Based on `@AntV/L7`. Inspired by `PyG2Plot`.
 
 [![Latest Stable Version](https://img.shields.io/pypi/v/pyl7plot.svg)](https://pypi.python.org/pypi/pyl7plot)
 [![build Status](https://github.com/hustcc/pyl7plot/workflows/build/badge.svg?branch=main)](https://github.com/hustcc/pyl7plot/actions?query=workflow%3Abuild)
@@ -83,6 +83,7 @@ dot.set_options({
     "zoom": 7,
   },
   "autoFit": True,
+  "height": 400, # set a default height in jupyter preview
   "source": {
     "data": [
        { "lng": 103.715, "lat": 31.211, "depth": 10, "mag": 5.8, "title": "M 5.8 - eastern Sichuan, China" },
@@ -118,6 +119,8 @@ dot.render_notebook()
 # dot.render_jupyter_lab()
 ```
 
+> More Online Examples PyL7plot in [Jupyter Lab](https://colab.research.google.com/drive/11gTHsZ5Xg31jjJUJWEt5PkZv0VE9qyAG?usp=sharing).
+
 ## API
 
 - **Plot**
@@ -133,8 +136,6 @@ dot.render_notebook()
 5. _plot.render_jupyter_lab(env, \*\*kwargs)_: render plot on jupyter lab preview.
 
 6. _plot.render_html(env, \*\*kwargs)_: render out html string by setting jinja2 env and kwargs.
-
-7. _plot.dump_js_options(env, \*\*kwargs)_: dump js options by setting jinja2 env and kwargs, use it for HTTP request.
 
 ## 协议
 

@@ -1,3 +1,2 @@
 include pyl7plot/templates/*
 include README.md
-include README.zh-CN.md
