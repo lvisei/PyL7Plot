@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ plot.page_title }}</title>
+    {% for dep in plot.dependencies %}
+    <script type="text/javascript" src="{{ dep.asset }}"></script>
+    {% endfor %}
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body,
+      div.pyl7plot-plot-container {
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
+
+    <div id="{{ plot.plot_id }}" class="pyl7plot-plot-container"></div>
+
+    <script>
+      var plot_{{ plot.plot_id }} = new L7Plot.{{plot.plot_type}}("{{ plot.plot_id }}", {{ plot.js_options }});
+    </script>
+  </body>
+</html>

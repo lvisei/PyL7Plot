@@ -1,0 +1,29 @@
+<script>
+  require.config({
+    paths: {
+      L7Plot: "https://unpkg.com/@antv/l7plot@0",
+    },
+  });
+</script>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  div.pyl7plot-plot-container {
+    height: 100%;
+    overflow: hidden;
+  }
+</style>
+
+<div id="{{ plot.plot_id }}" class="pyl7plot-plot-container"></div>
+
+<script>
+  require(['L7Plot'], function (L7Plot) {
+    var plot_{{ plot.plot_id }} = new L7Plot.{{plot.plot_type}}("{{ plot.plot_id }}", {{ plot.js_options }});
+  });
+</script>
